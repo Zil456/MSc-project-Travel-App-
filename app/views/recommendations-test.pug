@@ -1,0 +1,55 @@
+extend layout 
+block content 
+    h1 Hotel recommendations in your selected city
+        table(width='1000px', cellpadding='0', cellspacing='0', border='5', bgcolor='#F2F2F2')
+          tr
+            th Hotel Name
+            th City
+            th Value ranking in the city 
+            th Price
+
+          each r in recommendedHotels
+            tr
+              td= r.hotel_name
+              td= r.city
+              td= r.value_ranking_in_location
+              td= r.price
+
+    h1 Flight recommendations to your selected city
+      table(width='1000px', cellspacing='0', cellpadding='0', border='5', bgcolor='#F2F2F2')
+        tr
+          th Airline
+          th Origin
+          th Destination
+          th Date 
+          th Price 
+
+        each v in recommendedFlights
+          tr
+            td= v.airline
+            td= v.origin
+            td= v.destination
+            td= v.date
+            td= v.price 
+
+    h1 Attraction recommendations for your selected city
+      table(width='1000px', cellspacing='0', cellpadding='0', border='5', bgcolor='#F2F2F2')
+        tr
+          th Attraction name
+          th Value ranking in city
+          th Is there a fee? 
+
+        each s in recommendedAttractions
+          tr
+            td= s.attraction_name
+            td= s.ranking_in_location
+            td= s.is_fee
+    h1 Contact us to book your holiday
+      table(width='1000px', cellspacing='0', cellpadding='0', border='5', bgcolor='#F2F2F2')
+        tr
+          th Telephone
+          th email
+
+          tr
+            td= "02080748564"
+            td= "bookings@Travelapp.co.uk"

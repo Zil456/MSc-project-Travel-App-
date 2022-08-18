@@ -1,0 +1,11 @@
+extend layout 
+block content 
+    h1 Top attractions in the city are: #{attraction.attraction_name}
+    h3 Attraction location id is: #{attraction.location_id}
+    h2 Attraction value ranking in the city is: #{attraction.ranking_in_location} 
+    h2 Is there a fee?  #{attraction.is_fee} 
+        div(class='dropdown')
+            label(for='userLocationId') Choose your prefered attractions:
+            select(class='attractionsDiv1' name='userLocationId')
+                for attraction in attractionz
+                    option(value=attraction.attraction_id)  #{attraction.attraction_name} FEE? #{attraction.is_fee}

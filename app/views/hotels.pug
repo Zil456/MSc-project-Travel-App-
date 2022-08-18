@@ -1,0 +1,12 @@
+extend layout 
+block content 
+    h1 Hotel name is: #{hotel.hotel_name}
+    h3 Hotel location id is: #{hotel.location_id}
+    h2 Hotel value ranking in the city is: #{hotel.value_ranking_in_location} out of 10
+    h2 Hotel price per night is: £ #{hotel.price}    
+        div(class='dropdown')
+            p
+            label(for='userLocationId') Choose your prefered hotel:
+            select(class='hotelsDiv1' name='userLocationId')
+                for hotel in hotelz
+                    option(value=hotel.location_id) £ #{hotel.price} - #{hotel.hotel_name}

@@ -1,0 +1,10 @@
+extend layout 
+block content 
+    h1 Destination is: #{destination.destination}
+    h3 Destination location id is: #{destination.location_id}
+        div(class='dropdown')
+            p
+            label(for='userLocationId') Choose your prefered destination:
+            select(class='destinationDiv1' name='userLocationId')
+                for destination in destinationz
+                    option(value=destination.location_id) #{destination.destination}

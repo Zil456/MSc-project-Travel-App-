@@ -1,0 +1,13 @@
+extend layout 
+block content 
+    h1 Flight airline is: #{flight.airline}
+    h3 Flight origin is: #{flight.origin}
+    h2 Flight destination is: #{flight.destination} 
+    h2 Flight date is:   #{flight.date} 
+    h2 Flight price is:   #{flight.price}     
+        div(class='dropdown')
+            p
+            label(for='userLocationId') Choose your prefered flight:
+            select(class='flightDiv1' name='userLocationId')
+                for flight in flightz 
+                    option(value=flight.flight_id) £ #{flight.price}  #{flight.origin} - #{flight.destination}

@@ -1,0 +1,22 @@
+extend layout 
+block content 
+  div(class="container1")
+    div(class="container2")
+      h1 User First Name: #{user.first_name}
+      h2 Last Name: #{user.last_name}
+      h3 Address: #{user.address}
+      h3 Email: #{user.email}
+      h3 Telephone: #{user.telephone}
+
+      form(action='/recommendations-test' method='POST')
+
+          div(class='preferences')
+              div(class='dropdown')
+                div(class="container3")
+                  label(for='userLocationId') Choose your prefered destination:
+                      div(class="container4")  
+                        select(class='formSelectButton' name='userLocationId')
+                            for destination in destinationz
+                                option(value=destination.location_id) #{destination.destination}
+                            div(class='submitButtonContainer')
+                                input(type='submit' value='Submit' class='submitButton')
